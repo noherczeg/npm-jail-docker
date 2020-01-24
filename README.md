@@ -12,7 +12,7 @@ The Container will stop whenever it would need to access any URL which is not th
 
 ### Default setup utilizing the NPM central registry
 ```
-docker run -it --rm --cap-add=NET_ADMIN -v $(pwd)/example/package.json:/opt/package.json npm-jail-docker:1.0.0
+docker run -it --rm --cap-add=NET_ADMIN -v $(pwd)/example/package.json:/opt/package.json noherczeg/npm-jail-docker:1.0.0
 ```
 
 This will map a `package.json` file and run the install based on it.
@@ -21,7 +21,7 @@ This will map a `package.json` file and run the install based on it.
 
 ### Define whitelisted domain name and/or port
 ```
-docker run -it --rm --cap-add=NET_ADMIN -e WHITELIST_NAME=blabla.io -e WHITELIST_PORT=123 -v $(pwd)/example/package.json:/opt/package.json npm-jail-docker:1.0.0
+docker run -it --rm --cap-add=NET_ADMIN -e WHITELIST_NAME=blabla.io -e WHITELIST_PORT=123 -v $(pwd)/example/package.json:/opt/package.json noherczeg/npm-jail-docker:1.0.0
 ```
 
 ## LICENSE
