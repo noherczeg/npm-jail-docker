@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd /opt
+
+# Allow loopback
+iptables -I INPUT 1 -i lo -j ACCEPT
+
+# Allow DNS
+iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+
+# Now, allow connection to website $WHITELIST_NAME on port $WHITELIST_PORT
+iptables -A OUTPUT -p tcp -d $WHITELIST_NAME --dport $WHITELIST_PORT -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+# Drop everything
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+
+npm install --verbose

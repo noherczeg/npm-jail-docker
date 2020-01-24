@@ -1,0 +1,15 @@
+{
+  "name": "npm-jail-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["docker", "npm"],
+  "author": "Norbert Csaba Herczeg<noherczeg@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.24.0"
+  }
+}
